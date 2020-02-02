@@ -20,9 +20,9 @@ class Storage {
   }
 
   removeItem(item) {
-    for (const point of this.items) {
-      if (point === item) {
-        this.items.splice(this.items.indexOf(point), 1);
+    for (const element of this.items) {
+      if (element === item) {
+        this.items.splice(this.items.indexOf(element), 1);
       }
     }
   }
@@ -43,5 +43,3 @@ console.table(storage.items); // [ "Нанитоиды", "Пролонгер", "
 
 storage.removeItem("Пролонгер");
 console.table(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
-storage.removeItem("Дроид");
-console.table(storage.items)

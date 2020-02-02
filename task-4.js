@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 // Напиши класс StringBuilder. На вход он получает один параметр - строку, которую записывает в свойство _value.
 
 // Добавь классу следующий функционал:
@@ -9,34 +9,34 @@
 // Метод pad(str) - получает парметр str (строку) и добавляет ее в начало и в конец _value
 
 class StringBuilder {
-    constructor(string){
-        this._value = string;
-    }
+  constructor(string) {
+    this._value = string;
+  }
 
-    get value(){
-        return this._value;
-    }
+  get value() {
+    return this._value;
+  }
 
-    append(str){
-        this._value += str;
-    }
+  append(str) {
+    this._value += str;
+  }
 
-    prepend(str){
-        this._value = str + this._value;
-    }
+  prepend(str) {
+    this._value = str + this._value;
+  }
 
-    pad(str){
-        this._value = str + this._value + str;
-    }
+  pad(str) {
+    this._value = str + this._value + str;
+  }
 }
 
-const builder = new StringBuilder('.');
+const builder = new StringBuilder(".");
 
-builder.append('^');
+builder.append("^");
 console.log(builder.value); // '.^'
 
-builder.prepend('^');
+builder.prepend("^");
 console.log(builder.value); // '^.^'
 
-builder.pad('=');
+builder.pad("=");
 console.log(builder.value); // '=^.^='
