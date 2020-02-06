@@ -6,17 +6,11 @@ class Car {
    * в консоль значения свойств maxSpeed, speed, isOn, distance и price.
    */
   static getSpecs(car) {
-    this.maxSpeed = car.maxSpeed;
-    this.speed = car.speed;
-    this.isOn = car.isOn;
-    this.distance = car.distance;
-    this._price = car._price;
-
-    console.log(
-      `Max Speed: ${this.maxSpeed}, Speed: ${this.speed}, IsOn: ${this.isOn}, Distance: ${this.distance}, Price: ${this._price}`
+   console.log(
+     `Max Speed: ${car.maxSpeed}, Speed: ${car.speed}, IsOn: ${car.isOn}, Distance: ${car.distance}, Price: ${car._price}`
     );
   }
- /*
+  /*
    * Конструктор получает объект настроек.
    *
    * Добавь свойства будущеего экземпляра класса:
@@ -33,7 +27,7 @@ class Car {
     this.distance = obj.distance = 0;
     this._price = obj._price;
   }
- /*
+  /*
    * Добавь геттер и сеттер для свойства price,
    * который будет работать с свойством цены автомобиля.
    */
@@ -44,14 +38,14 @@ class Car {
   set price(value) {
     this._price = value;
   }
- /*
+  /*
    * Добавь код для того чтобы завести автомобиль
    * Записывает в свойство isOn значение true
    */
   turnOn() {
     this.isOn = true;
   }
-/*
+  /*
    * Добавь код для того чтобы заглушить автомобиль
    * Записывает в свойство isOn значение false,
    * и сбрасывает текущую скорость в 0
@@ -59,7 +53,7 @@ class Car {
   turnOff() {
     this.isOn = false;
   }
-/*
+  /*
    * Добавялет к свойству speed полученное значение,
    * при условии что результирующая скорость
    * не больше чем значение свойства maxSpeed
@@ -70,18 +64,18 @@ class Car {
       this.speed += this.value;
     }
   }
- /*
+  /*
    * Отнимает от свойства speed полученное значение,
    * при условии что результирующая скорость не меньше нуля
    */
   decelerate(value) {
     this.value = value;
 
-    if (this.value + this.speed > 0) {
+    if (this.value + this.speed >= 0) {
       this.speed -= this.value;
     }
   }
-/*
+  /*
    * Добавляет в поле distance киллометраж (hours * speed),
    * но только в том случае если машина заведена!
    */
@@ -111,4 +105,3 @@ Car.getSpecs(mustang);
 console.log(mustang.price);
 mustang.price = 4000;
 console.log(mustang.price);
-

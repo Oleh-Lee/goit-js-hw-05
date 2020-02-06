@@ -1,13 +1,14 @@
 "use strict";
 class User {
-  constructor({ name = String, age = Number, followers = Number }) {
+  constructor({ name = String, age = Number, followers = Number, x }) {
     this.name = name;
     this.age = age;
     this.followers = followers;
+this.x = x;
   }
-  getInfo = function() {
+  getInfo() {
     console.log(
-      `User ${this.name} is ${this.age} years old and has ${this.followers} followers`
+      `User ${this.name} is ${this.age} years old and has ${this.followers} followers ${this.x}`
     );
   };
 }
@@ -15,7 +16,8 @@ class User {
 const mango = new User({
   name: "Mango",
   age: 2,
-  followers: 20
+  followers: 20,
+  
 });
 
 mango.getInfo(); // User Mango is 2 years old and has 20 followers
@@ -27,3 +29,4 @@ const poly = new User({
 });
 
 poly.getInfo(); // User Poly is 3 years old and has 17 followers
+

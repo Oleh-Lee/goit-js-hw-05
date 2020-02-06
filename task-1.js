@@ -10,6 +10,16 @@ Account.prototype.getInfo = function() {
 
 console.log(Account.prototype.getInfo); // function
 
+class Account {
+constructor({login = login, email = email}){
+  this.login = login;
+  this.email = email
+}
+getInfo = function() {
+  console.log(`Login: ${this.login}, Email: ${this.email}`);
+}
+}
+
 const mango = new Account({
   login: "Mangozedog",
   email: "mango@dog.woof"
